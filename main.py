@@ -11,7 +11,7 @@ if __name__ == "__main__":
     clock = pygame.time.Clock()
 
     while run:
-        clock.tick(60)
+        clock.tick(30)
         Window.fill((0, 0, 0))
         pygame.display.update()
 
