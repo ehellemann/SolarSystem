@@ -20,7 +20,7 @@ if __name__ == "__main__":
                 run = False
 
         for object in CelestialObjects:
-            object.draw(object)
+            object.draw(Window)
             
     pygame.quit() 
 
