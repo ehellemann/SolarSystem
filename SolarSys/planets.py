@@ -20,7 +20,7 @@ def gravitational_force(planet1, planet2):
 
    
 class Planet:
-    scale = 250 / au.value
+    scale = 25000 / au.value
     def __init__(self, name, x, y, mass, radius, velocity, color):
         self.name = name
         self.x = x
@@ -44,13 +44,17 @@ class Planet:
 
     def draw(self, win):
         # update position to the center of the window and scale it 
-        x = self.x * self.scale + WinWidth / 2
-        y = self.y * self.scale + WinHeight / 2
-        pygame.draw.circle(win, self.color, (x, y), self.radius* self.scale)
+        dx = self.x * self.scale + (WinWidth / 2)
+        dy = self.y * self.scale + (WinHeight / 2)
+        pygame.draw.circle(win, self.color, (dx, dy), self.radius*self.scale)
 
+class Star(Planet):
+    pass
+
+sun = Star("Sun", x=0, y=0, mass=1988500e24, radius=695700*1000, velocity=(0,0), color=(255, 165, 0))
 mercury = Planet("Mercury", x=57.909e9, y=0, mass=0.33010e24, radius=2440.5*1000, velocity=(0, 47.36*1000), color=(114, 47, 55))
 #venus = Planet("Venus", 0.72e11, 0, 4.8675e24, 6051.8, (0, 35020))
 #earth = Planet("Earth", 1.496e11, 0, 5.972e24, 6371, (0, 29783))
 #mars = Planet("Mars", 2.28e11, 0, 6.39e23, 3389.5, (0, 24007))
 
-CelestialObjects = [mercury]
+CelestialObjects = [sun, mercury]

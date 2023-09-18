@@ -21,6 +21,8 @@ if __name__ == "__main__":
 
         for object in CelestialObjects:
             object.draw(Window)
+
+        pygame.display.update()
             
     pygame.quit() 
 
